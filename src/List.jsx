@@ -3,10 +3,10 @@ import React from "react";
 export default function List({ data }) {
   return (
     <div>
-      <ul key={data.id}>
+      <ul>
         {data.map((obj) => {
           return (
-            <li>
+            <li key={obj.id}>
               {obj.user} {obj.amount}
             </li>
           );

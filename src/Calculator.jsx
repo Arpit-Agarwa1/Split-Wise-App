@@ -1,16 +1,18 @@
 import React, { useState } from "react";
 
-export default function Calculator({ data }) {
+export default function Calculator({ data, show, setShow }) {
   const [total, setTotal] = useState("");
   const [split, setSplit] = useState("");
 
   function calcualte(a) {
+    setShow(true);
     let temp = 0;
 
     for (let i = 0; i < data.length; i++) {
       temp += data[i].amount;
     }
     setTotal(temp);
+
     console.log(total);
   }
 
@@ -22,12 +24,6 @@ export default function Calculator({ data }) {
   }
   return (
     <div>
-      <div className="display-data">
-        <p>Total Expenses of Group {total}$</p>
-
-        <p>Share per Person {split}$</p>
-      </div>
-
       <button
         onClick={() => {
           calcualte(data);
@@ -35,8 +31,18 @@ export default function Calculator({ data }) {
       >
         Calculate the total
       </button>
+      {show && (
+        <div>
+          <div className="display-data">
+            <p>Total Expenses of Group {total}$</p>
 
-      <button onClick={splitHandel}>Spliter</button>
+            <p>Number of People to be split in {data.length}</p>
+
+            <p>Share per Person {split}$</p>
+            <button onClick={splitHandel}>Spliter</button>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

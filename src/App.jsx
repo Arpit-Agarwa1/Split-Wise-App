@@ -10,6 +10,7 @@ export default function App() {
     amount: "",
   });
   const [data, setData] = useState([]);
+  const [show, setShow] = useState(false);
 
   function handelChange(e) {
     const { name, value } = e.target;
@@ -40,7 +41,7 @@ export default function App() {
       />
       <List data={data} />
 
-      <Calculator data={data} />
+      <Calculator data={data} setShow={setShow} show={show} />
     </div>
   );
 }

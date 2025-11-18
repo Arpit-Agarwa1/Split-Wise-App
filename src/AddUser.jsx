@@ -1,6 +1,9 @@
 export default function AddUser({ input, handelChange, handelSubmit }) {
   return (
     <div>
+      <h1>Bill Splitter</h1>
+      <br />
+      <br />
       <form action="" onSubmit={handelSubmit}>
         <input
           type="text"
