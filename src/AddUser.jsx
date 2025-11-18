@@ -14,7 +14,7 @@ export default function AddUser({ input, handelChange, handelSubmit }) {
           type="number"
           name="amount"
           value={input.amount}
-          placeholder="Enter your Expwnse"
+          placeholder="Enter your Expense"
           onChange={handelChange}
         />
 
