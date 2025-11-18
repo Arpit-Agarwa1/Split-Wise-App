@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import AddUser from "./AddUser";
 import List from "./List";
 import Calculator from "./Calculator";
+import "./App.css";
 
 export default function App() {
   const [input, setInput] = useState({
